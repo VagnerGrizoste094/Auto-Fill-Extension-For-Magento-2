@@ -1,0 +1,36 @@
+{
+
+  "manifest_version": 2,
+  "name": "AutoComplete",
+  "version": "1.0",
+
+  "description": "AutoComplete inputs",
+  "icons": {
+    "48": "icons/list-simple-7.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/list-simple-7.png",
+    "default_title": "AutoComplete",
+    "default_popup": "menu.html"
+  },
+
+  "options_ui": {
+    "page": "menu.html"
+  },
+
+  "permissions": ["storage"],
+
+  "applications": {
+    "gecko": {
+      "id": "vagner_grizoste@hotmail.com"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.modabicho.com.br/*"],
+      "js": ["autocomplete.js"]
+    }
+  ]
+
+}
