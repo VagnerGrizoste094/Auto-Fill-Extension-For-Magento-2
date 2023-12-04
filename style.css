@@ -22,10 +22,16 @@ body {
     justify-content: space-between;
     margin-bottom: 10px;
 }
-.field input[type="text"] {
+.field input {
     width: 130px;
     border-radius: 5px;
     height: 25px;
+}
+.field input[type="radio"] {
+    width: auto;
+    border-radius: unset;
+    height: auto;
+    cursor: pointer;
 }
 .content, .title {
     display: flex;
@@ -54,6 +60,7 @@ body {
     border-style: none;
     color: white;
     height: 25px;
+    cursor: pointer;
 }
 .btn--save {
     background-color: #16A34A;

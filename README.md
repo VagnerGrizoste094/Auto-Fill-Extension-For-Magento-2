@@ -25,6 +25,7 @@
   - Download the extension using the link: 
   - Enable the extension accessing the settings of the extension and clicking yes and save.
   - Go to the form page and press the shortcut `Shift + B`
+  - Default password: 1234teste
 ## Customization
   - Access the extension settings and fill the custom fields inside and click on save button.
   - Go to the form page and press the shortcut `Shift + B`

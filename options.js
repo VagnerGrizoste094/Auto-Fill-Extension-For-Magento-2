@@ -8,6 +8,7 @@ function saveOptions(e) {
       customEmailDomain: document.querySelector("input[name='custom-email-domain']").value ?? null
     }
   });
+  window.close();
 }
 
 function restoreOptions() {
@@ -36,7 +37,7 @@ function clear(e) {
   document.querySelector("input[name='custom-password']").value = null;
   document.querySelector("input[name='custom-postcode']").value = null;
   document.querySelector("input[name='custom-email-domain']").value = null;
-
+  window.close();
 }
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document.querySelector("form").addEventListener("submit", saveOptions);

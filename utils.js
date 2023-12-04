@@ -34,7 +34,7 @@ function generateRandomEmail(customEmailDomain) {
     for(let ii=0; ii<15; ii++){
         string += chars[Math.floor(Math.random() * chars.length)];
     }
-    return string + '@' + customEmailDomain;
+    return string + '@' + (customEmailDomain ? customEmailDomain : 'gmail.com');
 }
 
 function generateRandomTelephone() {
@@ -97,5 +97,5 @@ function generateFakeCnpj() {
  	let d2 = d1*2+n12*3+n11*4+n10*5+n9*6+n8*7+n7*8+n6*9+n5*2+n4*3+n3*4+n2*5+n1*6;
  	d2 = 11 - ( mod(d2,11) );
  	if (d2>=10) d2 = 0;
-	return ''+n1+n2+n3+n4+n5+n6+n7+n8+n9+n10+n11+n12+d1+d2;
+	return ''+n1+n2+'.'+n3+n4+n5+'.'+n6+n7+n8+'/'+n9+n10+n11+n12+'-'+d1+d2;
 }

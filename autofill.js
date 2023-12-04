@@ -29,7 +29,7 @@ function complete(e) {
 				}
 			});
 			let email = generateRandomEmail(obj.config.customEmailDomain);
-			let password = obj.config.customPassword ? obj.config.customPassword : '#Teste12';
+			let password = obj.config.customPassword ? obj.config.customPassword : '1234teste';
 			filteredInputsArray.forEach(function(el, idx) {
 				switch (true) {
 					case (el.name == "firstname"):
@@ -39,25 +39,36 @@ function complete(e) {
 						el.value = generateRandomName();
 					break;
 					case (el.name == "email"):
-						el.value = email
+						el.value = email;
 					break;
 					case (el.name == "confirm_email"):
-						el.value = email
+						el.value = email;
 					break;
 					case (el.name == "taxvat" || el.name == "vat_id"):
-						el.value = generateFakeCpf()
+						if (el.maxLength > 14) {
+							el.value = generateFakeCnpj();
+						} else {
+							el.value = generateFakeCpf();
+						}
+						el.blur();
 					break;
 					case (el.name == "telephone"):
 						el.value = generateRandomTelephone();
+					break;
+					case (el.name == "gender"):
+						el.value = generateRandom(1)+1;
+					break;
+					case (el.name == "isento"):
+						el.checked = true;
 					break;
 					case (el.name == "fax"):
 						el.value = generateRandomTelephone();
 					break;
 					case (el.name == "password"):
-						el.value = password
+						el.value = password;
 					break;
 					case (el.name == "password_confirmation"):
-						el.value = password
+						el.value = password;
 					break;
 					case (el.name == "dob"):
 						el.value = generateFakeDob();
