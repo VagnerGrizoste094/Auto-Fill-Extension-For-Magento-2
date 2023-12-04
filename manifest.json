@@ -1,36 +1,29 @@
 {
-
   "manifest_version": 2,
-  "name": "AutoComplete",
+  "name": "Auto Fill Extension For Magento 2",
   "version": "1.0",
-
-  "description": "AutoComplete inputs",
+  "description": "Automatically generate random values for fields such as name, email, phone number, address, and more.",
   "icons": {
     "48": "icons/list-simple-7.png"
   },
-
   "browser_action": {
     "default_icon": "icons/list-simple-7.png",
-    "default_title": "AutoComplete",
+    "default_title": "Auto Fill Extension For Magento 2",
     "default_popup": "menu.html"
   },
-
   "options_ui": {
     "page": "menu.html"
   },
-
   "permissions": ["storage"],
-
   "applications": {
     "gecko": {
-      "id": "vagner_grizoste@hotmail.com"
+      "id": "vagner.grizoste@gmail.com"
     }
   },
   "content_scripts": [
     {
-      "matches": ["*://*.modabicho.com.br/*"],
-      "js": ["autocomplete.js"]
+      "matches": ["*://*/*"],
+      "js": ["autofill.js", "utils.js"]
     }
   ]
-
 }

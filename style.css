@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-weight: 600;
+    width: 300px;
+    padding: 15px;
+    background-color: #262626;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.block__content {
+    padding: 10px;
+    font-size: 12px;
+}
+.field--first {
+    padding-left: 43px;
+}
+.form .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.field input[type="text"] {
+    width: 130px;
+    border-radius: 5px;
+    height: 25px;
+}
+.content, .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divider {
+    margin: 10px;
+}
+.title {
+    height: 50px;
+    font-weight: 600;
+}
+.title h1 {
+    font-size: 14px;
+}
+.title__field {
+    display: flex;
+    align-items: center;
+}
+.actions .btn {
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    height: 25px;
+}
+.btn--save {
+    background-color: #16A34A;
+}
+.btn--clear {
+    background-color: #CA8A04;
+}

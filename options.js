@@ -2,19 +2,24 @@ function saveOptions(e) {
   e.preventDefault();
   browser.storage.sync.set({
     config: {
-      active: document.querySelectorAll("input[name='active']:checked")[0].value
+      enable: document.querySelectorAll("input[name='enable']:checked")[0].value,
+      customPassword: document.querySelector("input[name='custom-password']").value ?? null,
+      customPostcode: document.querySelector("input[name='custom-postcode']").value ?? null,
+      customEmailDomain: document.querySelector("input[name='custom-email-domain']").value ?? null
     }
   });
 }
 
 function restoreOptions() {
-
-  function setCurrentChoice(result) {
-    if (result.config.active == '1') {
-      document.querySelector("#active").checked = true
+  function restore(result) {
+    if (result.config.enable == '1') {
+      document.querySelector("#enable").checked = true
     } else {
-      document.querySelector("#desactive").checked = true
+      document.querySelector("#disable").checked = true
     }
+    document.querySelector("input[name='custom-password']").value = result.config.customPassword;
+    document.querySelector("input[name='custom-postcode']").value = result.config.customPostcode;
+    document.querySelector("input[name='custom-email-domain']").value = result.config.customEmailDomain;
   }
 
   function onError(error) {
@@ -22,8 +27,17 @@ function restoreOptions() {
   }
 
   var getting = browser.storage.sync.get("config");
-  getting.then(setCurrentChoice, onError);
+  getting.then(restore, onError);
 }
 
+function clear(e) {
+  e.preventDefault();
+  browser.storage.sync.clear();
+  document.querySelector("input[name='custom-password']").value = null;
+  document.querySelector("input[name='custom-postcode']").value = null;
+  document.querySelector("input[name='custom-email-domain']").value = null;
+
+}
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document.querySelector("form").addEventListener("submit", saveOptions);
+document.querySelector("button[name='clear']").addEventListener("click", clear);
