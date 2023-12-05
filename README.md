@@ -22,7 +22,7 @@
     6. Privacy and Security:
         The extension does not store or share sensitive information, ensuring complete privacy and data security.
 ## How It Works
-  - Download the extension using the link: 
+  - Download the extension using the link: https://addons.mozilla.org/en-US/firefox/addon/auto-fill-ext-for-magento-2/
   - Enable the extension accessing the settings of the extension and clicking yes and save.
   - Go to the form page and press the shortcut `Shift + B`
   - Default password: 1234teste
